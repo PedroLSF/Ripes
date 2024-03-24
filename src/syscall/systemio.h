@@ -456,6 +456,7 @@ public slots:
    * Pushes @p data onto the stdin buffer object
    */
   void putStdInData(const QByteArray &data) {
+    qDebug() << data;
     FileIOData::s_stdioMutex.lock();
     FileIOData::s_stdinBuffer.append(data);
     FileIOData::s_stdinBufferEmpty.wakeAll();
