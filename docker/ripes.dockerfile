@@ -49,4 +49,6 @@ RUN git clone --recursive --branch ${BRANCH} https://github.com/mortbopet/Ripes.
     && cd /tmp \
     && rm -rf /tmp/ripes
 
-ENTRYPOINT ["Ripes"]
+WORKDIR /tmp/ripes
+
+ENTRYPOINT ["Ripes", "--mode", "cli"]
